@@ -4,8 +4,8 @@
 (require test-engine/racket-tests)
 
 ; String->String
-; extract the first character from s
-(check-expect (string-first "abc") "a")
-(check-expect (string-first "cba") "c")
-(define (string-first s) (string-ith s 0))
+; remove the first character from s
+(check-expect (string-rest "abc") "bc")
+(check-expect (string-rest "cba") "ba")
+(define (string-rest s) (substring s 1))
 (test)
